@@ -1,9 +1,25 @@
-## How to use
+## Getting Started
 
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init)
+First, install node modules and dependancies:
 
 ```bash
-npx create-next-app --example with-chakra-ui with-chakra-ui-app
+npm install
 ```
+
+Then, run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see our project.
+
+## Getting Started
+
+Run
+
+```bash
+npm test
+```
+
+This will run jest with the --watchAll flag set to false
