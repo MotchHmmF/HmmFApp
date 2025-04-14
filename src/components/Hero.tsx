@@ -1,0 +1,17 @@
+import { Flex, Heading } from "@chakra-ui/react";
+
+export const Hero = ({ title }: { title: string }) => (
+  <Flex
+    justifyContent="center"
+    alignItems="top"
+    height="12vh"
+    bgGradient="linear(to-l, heroGradientStart, heroGradientEnd)"
+    bgClip="text"
+  >
+    <Heading fontSize="4vw">{title}</Heading>
+  </Flex>
+);
+
+Hero.defaultProps = {
+  title: "with-chakra-ui-typescript",
+};
