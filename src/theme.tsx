@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, transition } from "@chakra-ui/react";
 
 const fonts = { mono: `'Menlo', monospace` };
 
@@ -24,6 +24,10 @@ const theme = extendTheme({
         default: "#0c2deb",
         _dark: "#38eb0c",
       },
+      bg: {
+        default: "#ffffff",
+        _dark: "#16161D",
+      },
     },
     radii: {
       button: "12px",
@@ -34,6 +38,15 @@ const theme = extendTheme({
   },
   fonts,
   breakpoints,
+  styles: {
+    global: {
+      body: {
+        transition: 'background 1s ease !important',
+        backgroundColor: 'bg',
+        color: 'text',
+      }
+    }
+  }
 });
 
 export default theme;
