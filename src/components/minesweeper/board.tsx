@@ -1,4 +1,4 @@
-import { Grid, Button, ButtonProps } from "@chakra-ui/react";
+import { Grid, Button, ButtonProps, Stack } from "@chakra-ui/react";
 import { FaFlag } from "react-icons/fa";
 import { createBoard, generateMines, inBound } from "./logic";
 import { useEffect, useState } from "react";
@@ -103,12 +103,11 @@ export const Board = () => {
   }, [grid]);
 
   return (
-    <Grid>
+    <Grid templateColumns={`repeat(${COLUMNS}, 1fr)`}>
       {grid.map((row, x) => (
-        <div key={x}>
-          {row.map((square, y) => (
+          row.map((square, y) => (
             <Button
-              key={y}
+              key={`${x}-${y}`}
               {...getButtonStyle(x, y)}
               data-value={square.count}
               onClick={() => reveal(x, y)}
@@ -116,10 +115,9 @@ export const Board = () => {
             >
               {square.isRevealed && square.count !== 0 ? square.count : ""}
 
-              {square.isFlagged ? <FaFlag /> : ""}
+              {square.isFlagged && !square.isRevealed ? <FaFlag /> : ""}
             </Button>
-          ))}
-        </div>
+          ))
       ))}
     </Grid>
   );
